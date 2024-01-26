@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title> BMI Calculator </title>
+
+    <link 
+        rel="stylesheet"
+        href="bmi_index.css"
+    />
+</head>
+    <body>
+        <div class="bmi-container">
+            <div class="bmi_container__bmi bmi-header">
+                <h1> BMI Calculator </h1>
+            </div>
+
+            <form 
+                id="form"
+                action="/" 
+                method="GET" 
+                class="bmi_container__form bmi-form"
+            >
+                <div class="bmi-form__name bmi--form-control">
+                    <label 
+                        for="user-name"
+                        class="bmi-form-control-name__label bmi--form-control-label"
+                    >
+                        Name 
+                    </label>
+
+                    <input 
+                        id="user-name"
+                        type="text"
+                        class="bmi-form-control-name__input bmi--form-control-input"
+                        placeholder="Enter your name"
+                        autocomplete="off"
+                    />
+
+                    <span id="user-name-error"></span>
+                </div>
+
+                <div class="bmi-form__email bmi--form-control">
+                    <label 
+                        for="user-email"
+                        class="bmi-form-control-email__label bmi--form-control-label"
+                    >
+                        Email 
+                    </label>
+
+                    <input 
+                        id="user-email"
+                        type="email"
+                        class="bmi-form-control-email__input bmi--form-control-input"
+                        placeholder="Enter your email"
+                        autocomplete="off"
+                    />
+
+                    <span id="user-email-error"></span>
+                </div>
+
+                <div class="bmi-form__height bmi--form-control">
+                    <label 
+                        for="user-height"
+                        class="bmi-form-control-height__label bmi--form-control-label"
+                    >
+                        Height 
+                    </label>
+
+                    <input 
+                        id="user-height"
+                        type="number"
+                        class="bmi-form-control-height__input bmi--form-control-input"
+                        placeholder="Enter your height ( in cm's )"
+                        autocomplete="off"
+                    />
+
+                    <span id="user-height-error"></span>
+                </div>
+
+                <div class="bmi-form__weight bmi--form-control">
+                    <label 
+                        for="user-weight"
+                        class="bmi-form-control-weight__label bmi--form-control-label"
+                    >
+                        Weight
+                    </label>
+
+                    <input 
+                        id="user-weight"
+                        type="number"
+                        class="bmi-form-control-weight__input bmi--form-control-input"
+                        placeholder="Enter your weight ( in kg's )"
+                        autocomplete="off"
+                    />
+
+                    <span id="user-weight-error"></span>
+                </div>
+
+                <div class="bmi__form-submit bmi--form-control-submit">
+                    <button
+                        id="submit"
+                        class="bmi--form-control-submit-btn"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </form>
+
+            <div class="bmi_container__result bmi-result">
+                <p id="bmiResult" class="bmi-result__value bmi-result-value"></p>
+
+                <p id="bmiResultDescrption" class="bmi-result__description bmi-result-description"></p>
+            </div>
+        </div>
+
+        <script src="bmi_index.js"></script>
+    </body>
+</html>
