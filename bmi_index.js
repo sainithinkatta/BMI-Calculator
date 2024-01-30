@@ -6,6 +6,7 @@ const FORM_FIELDS_ERROR_MESSAGES = {
     'user-height': 'Please enter your height.',
     'user-weight': 'Please enter your weight.'
 };
+
 const BMI_RESULT_LABEL = 'Your Body Mass Index (BMI) Result = ';
 
 const BMI_RESULT_DESCRIPTIONS = {
@@ -20,7 +21,7 @@ let userDetails = {
 	userEmail: '',
 	userHeight: '',
 	userWeight: ''
-  };
+};
 
 form.addEventListener("submit", (event) => {
 	event.preventDefault(); // Preventing default form submission.
@@ -30,6 +31,7 @@ form.addEventListener("submit", (event) => {
 	userDetails.userHeight = document.getElementById("user-height").value;
 	userDetails.userWeight = document.getElementById("user-weight").value;
 
+        // Validating Form Fields.
 	if (!checkFormFields()) { return; }
 
 	calculateBmi();
@@ -70,7 +72,7 @@ function checkFormFields() {
 };
 
 function showInputFieldDescription (fieldName, isValidInputField) {
-	const field = document.getElementById(fieldName);
+    const field = document.getElementById(fieldName);
     field.style.borderColor = isValidInputField ? "" : "red";
 
     const errorField = document.getElementById(fieldName + '-error');
@@ -79,8 +81,8 @@ function showInputFieldDescription (fieldName, isValidInputField) {
 };
 
 function calculateBmi () {
-	// BMI calculation formula: weight / ((height * height) / 10000).
-	const bmiResult = (userDetails.userWeight / ((userDetails.userHeight * userDetails.userHeight) / 10000)).toFixed(2); // fixing to 2 decimal points only.
+    // BMI calculation formula: weight / ((height * height) / 10000).
+    const bmiResult = (userDetails.userWeight / ((userDetails.userHeight * userDetails.userHeight) / 10000)).toFixed(2); // Fixing to 2 decimal points only.
 
     const bmiResultContainerElement = document.getElementById("bmiResult");
     const bmiResultDescrptionContainerElement = document.getElementById("bmiResultDescrption");
